@@ -1,0 +1,8 @@
+default:
+	- "build"
+
+build:
+ 	- "concurrent:amdclean"
+
+dev:
+	- "concurrent:watch"
