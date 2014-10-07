@@ -1,6 +1,7 @@
 define(function () {
 	/**
-	 * Description
+	 * @class Schema
+   * @namespace Shine 
 	 * @chainable
 	 */
 	function Schema(name, obj) {

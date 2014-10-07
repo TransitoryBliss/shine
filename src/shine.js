@@ -2,7 +2,7 @@
  * @module Shine
  */
 
-define('shine', function (factory) {	
+define(['Router', 'Model', 'Schema'], function (Router, Model, Schema) {	
 	if (!window.$)
 		throw new Error("Missing jQuery library.");
 
@@ -48,10 +48,18 @@ define('shine', function (factory) {
 		 * Contains all model instances
 		 * 
 		 * @property models
-		 * @type models 
+		 * @type {object} 
 		 * @default {}
 		 */
 		this.models = {};
+		/**
+		 * Contains all router instances
+		 * 
+		 * @property routers
+		 * @type {objects} 
+		 * @default {}
+		 */
+		this.routers = {};		
 		/**
 		 * Contains all schema instances
 		 * 
@@ -75,7 +83,7 @@ define('shine', function (factory) {
 	 */
 	Shine.createApplication = function (name, options) {
 		return STATE.applications[name] = new Shine(name, options);
-	}
+	};
 
 	/**
 	 * @method createSchema
@@ -91,6 +99,53 @@ define('shine', function (factory) {
 		var schema = this.schemas[name] = new this.Schema(name, obj);
 		return schema;
 	};
+
+	/**
+	 * @method createRouter
+	 * @constructor
+	 * @param  {string} name   the name of the router
+	 * @return {Router}        a new Router instance
+	 */
+	Shine.prototype.createRouter = function (name) {
+		if (!name) 
+			throw new Error("Missing name argument.");
+
+		var router = this.routers[name] = new Router();
+		return router;
+	};	
+
+	/**
+	 * Get model by name
+	 * 	 
+	 * @method  model
+	 * @param  {String} name name of model to return
+	 * @chainable
+	 * @return {Model}      an existing model instance
+	 */
+	Shine.prototype.model = function (name) {				
+		return this.models[name];		
+	};	
+	/**
+	 * Get router by name
+	 * 
+	 * @method  router
+	 * @param  {String} name name of router to return
+	 * @chainable
+	 * @return {Router}      an existing router instance
+	 */
+	Shine.prototype.router = function (name) {		
+		return this.routers[name];		
+	};	
+	/**
+	 * Get schema by name
+	 * 
+	 * @method  schema
+	 * @param  {String} name 	name of schema to return
+	 * @return {Schema}      	an existing schema instance
+	 */
+	Shine.prototype.schema = function (name) {		
+		return this.schemas[name];		
+	};	
 
 	/**
 	 * Creates a new Model based on the schema or object
@@ -113,9 +168,9 @@ define('shine', function (factory) {
 
 	Shine.prototype.$ = $;		
 
-	Shine.prototype.Schema = require('./Schema');
-	
-	Shine.prototype.Model = require('./Model');	
+	Shine.prototype.Schema = Schema;
+	Shine.prototype.Model = Model;
+	Shine.prototype.Router = Router;
 
 	return Shine;
 });

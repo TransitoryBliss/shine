@@ -7,8 +7,12 @@
 	<script src="dist/shine-0.0.0.js"></script>
 	<script>
 		var app = window.app = shine.createApplication('app', {});
-		var modelnameSchema = app.createSchema('modelName', {name: String})		
-		app.createModel('modelName', modelnameSchema);
+		var router = app.createRouter('app');
+
+    router.get('products/:id', function (req) {      
+      
+    });
+
 	</script>
 </head>
 <body>

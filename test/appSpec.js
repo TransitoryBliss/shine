@@ -45,4 +45,24 @@ define(['shine'], function (shine) {
     } , "throws error without name argument");
   });
 
+  test("model()", function () {
+    var app = shine.createApplication('app');
+    equal($.type( app.model('nonexisting') ), 'undefined', "returns undefined if non existing model");
+    app.createModel('testModelOne', {});
+    ok(app.model('testModelOne') instanceof app.Model, "returns model if existing");
+  });
+
+  test("schema()", function () {
+    var app = shine.createApplication('app');
+    equal($.type( app.schema('nonexisting') ), 'undefined', "returns undefined if non existing schema");
+    app.createSchema('testSchemaOne', {});
+    ok(app.schema('testSchemaOne') instanceof app.Schema, "returns schema if existing");
+  });
+
+  test("router()", function () {
+    var app = shine.createApplication('app');
+    equal($.type( app.router('nonexisting') ), 'undefined', "returns undefined if non existing router");
+    app.createRouter('testRouterOne', {});
+    ok(app.router('testRouterOne') instanceof app.Router, "returns router if existing");
+  });  
 });

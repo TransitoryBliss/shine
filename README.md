@@ -30,4 +30,7 @@ $ grunt yuidoc
 
 ## Tests
 Tests are written with QUnit and Karma as the runner.
-```grunt test```
+
+```bash
+$ grunt test
+```

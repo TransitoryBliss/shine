@@ -9,7 +9,8 @@ var pkg = require('../package.json');
 // Define all path aliases
 // 
 var require_paths = {
-  "shine": "shine"
+  "shine": "shine",
+  "grapnel": "../lib/grapnel/grapnel.min"
 }
 
 module.exports = {
