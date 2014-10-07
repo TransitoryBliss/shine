@@ -5,6 +5,9 @@ define(function () {
 	 * @param {} schema
 	 * @return 
 	 */
-	function Model(schema) {};
+	function Model(name, schema) {		
+		this.name = name;
+    this.schema = schema || null;
+  };
 	return Model;
 });

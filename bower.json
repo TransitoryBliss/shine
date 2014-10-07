@@ -1,0 +1,25 @@
+{
+  "name": "shine",
+  "version": "0.0.0",
+  "homepage": "https://github.com/shockwork/shine",
+  "authors": [
+    "shockwork <info@shockwork.net>"
+  ],
+  "main": "src/shine.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "lib",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}

@@ -1,9 +1,10 @@
 define(function () {
 	/**
 	 * Description
-	 * @method Schema
-	 * @return 
+	 * @chainable
 	 */
-	function Schema() {};
+	function Schema(name, obj) {
+
+  };
 	return Schema;
 });

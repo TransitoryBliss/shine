@@ -1,8 +1,19 @@
 default:
 	- "build"
 
-build:
+dist: 
+  - "karma:unit"
+  - "concurrent:amdclean"
+
+build:  
  	- "concurrent:amdclean"
+
+test:
+  - "karma:unit"
 
 dev:
 	- "concurrent:watch"
+
+docs:
+  - "yuidoc"
+  - "connect:docs"
