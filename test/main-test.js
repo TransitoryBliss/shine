@@ -10,10 +10,6 @@ requirejs.config({
     // Karma serves files from '/base'
     baseUrl: 'http://localhost:9876/base/src',
 
-    paths: {
-        jquery: '../lib/jquery/jquery.js'
-    },
-
     // ask Require.js to load these files (all our tests)
     deps: tests,
 

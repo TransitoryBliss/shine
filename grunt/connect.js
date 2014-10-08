@@ -7,7 +7,7 @@ module.exports = {
 		options: {
 			keepalive: true,
 			port: 1337,
-			base: "./"
+			base: ["./", "example"]
 		}
 	},
 	docs: {

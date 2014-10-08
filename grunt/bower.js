@@ -9,7 +9,7 @@ module.exports = {
             install: true,
             verbose: false,
             cleanTargetDir: false,
-            cleanBowerDir: false,
+            cleanBowerDir: true,
             bowerOptions: {}
         }
     }

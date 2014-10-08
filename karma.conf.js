@@ -9,11 +9,11 @@ module.exports = function (config) {
     port: 9876,
     singleRun: true,
     // list of files / patterns to load in the browser
-    files: [
+    files: [        
         {pattern: 'lib/**/*.js', included: true},
         {pattern: 'src/**/*.js', included: false},
         {pattern: 'test/**/*Spec.js', included: false},
-
+        
         'test/main-test.js'
     ],
     reporters: ['dots']

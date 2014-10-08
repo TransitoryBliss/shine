@@ -6,7 +6,6 @@ define(['Router', 'Model', 'Schema'], function (Router, Model, Schema) {
 	if (!window.$)
 		throw new Error("Missing jQuery library.");
 
-
 	// Keeps track of all the registered applications
 	var STATE = {};
 	STATE.applications = {};
@@ -72,6 +71,9 @@ define(['Router', 'Model', 'Schema'], function (Router, Model, Schema) {
 
 		return this;
 	};
+
+	Shine.$ = window.$;	
+
 
 	/**
 	 * Creates a Shine application. 
@@ -166,7 +168,7 @@ define(['Router', 'Model', 'Schema'], function (Router, Model, Schema) {
 		return model;
 	};
 
-	Shine.prototype.$ = $;		
+	
 
 	Shine.prototype.Schema = Schema;
 	Shine.prototype.Model = Model;

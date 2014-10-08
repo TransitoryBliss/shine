@@ -1,7 +1,9 @@
 define(['shine'], function (shine) {  
+  
+
   module('shine', {
     setup: function () {      
-      //...     
+      // ...
     }
   });
 
@@ -44,6 +46,29 @@ define(['shine'], function (shine) {
       app.createModel();
     } , "throws error without name argument");
   });
+
+  test("createSchema() with name and no schema", function () {
+    var app = shine.createApplication('app');
+    var testSchemaOne = app.createSchema('testSchemaOne', {});    
+    ok(testSchemaOne);
+  });  
+
+  test("createSchema() with schema", function () {
+    var app = shine.createApplication('app');
+    var testSchemaOne = app.createSchema('testSchemaOne', {
+      name: {
+        type: String
+      }
+    });
+    ok(testSchemaOne);
+  })
+
+  test("createSchema() without name", function () {
+    var app = shine.createApplication('app');
+    throws(function () {
+      app.createSchema();
+    } , "throws error without name argument");
+  });  
 
   test("model()", function () {
     var app = shine.createApplication('app');

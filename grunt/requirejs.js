@@ -9,13 +9,17 @@ var pkg = require('../package.json');
 // Define all path aliases
 // 
 var require_paths = {
-  "shine": "shine",
-  "grapnel": "../lib/grapnel/grapnel.min"
+  "shine": "shine"
 }
 
 module.exports = {
 	amdclean: {
         options: {
+          shim: {
+            'lib/lodash/lodash.compat': {
+              exports: '_'
+            }
+          },          
           paths: require_paths,
           'baseUrl': 'src/',
           'name': 'shine',
